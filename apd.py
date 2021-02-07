@@ -1,5 +1,6 @@
 #!/bin/python3
-# The main of progam
+# The main of program include cli interface
+
 import downloader as dl
 import video_finder as vf
 import play_list_finder as plf
