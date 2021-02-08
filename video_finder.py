@@ -9,8 +9,8 @@ lstlink = []
 tmpq = str()
 def main(link, quality):
     tmpq = quality
-    quality = ".*"+str(quality)+".*"
-    if(link[0:4] == "http"):
+    quality = ".*"+str(quality)+".*"    # This regex find the specify quality in the list of all quality
+    if(link[0:23] == "https://www.aparat.com/"):
         req = requests.get(link)
         if(req.status_code == 200):
             result = req.content
@@ -19,7 +19,7 @@ def main(link, quality):
             videolinks = re.findall("href=\"(.*)\".*target", str(fquality)) # This Regex return a list of all quality of video
             for i in videolinks:
                 if(re.findall(quality, i)):
-                    print(i)
+                    return i
         else:
             print("http status code is: "+req.status_code)
     else:

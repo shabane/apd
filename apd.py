@@ -7,9 +7,9 @@ import play_list_finder as plf
 import argparse
 
 # Description for each option and paramer
-play_list_des = "If video have play list find and download all playlist. if play list url given, download all play list"
+play_list_des = "If video have play list, find and download all playlist. if play list url given, download all play list. -l will print all the links on stdout\n"
 q_des = "144, 360, 480, 720, 1080"
-spider_des = "If --spider or -s specify, it will crawl the page given and download all the play list"
+spider_des = "If --spider or -s specify, it will crawl the page given and download all the play list. -l will print all the links on stdout"
 just_list_des = "Just print the video's link in stdout"
 primary_des = "Any Aparat link such as Playlist Or Normal video"
 
@@ -36,10 +36,12 @@ if(link != None):
     if(playlist == True):
         pass
     else:
-        videos = vf.main(link, quality)
+        videos.append(vf.main(link, quality))
     if(spider == True):
         pass
     if(just_list == True):
         pass
 else:
     print("Did you miss link ?")
+
+print(videos[0:])
