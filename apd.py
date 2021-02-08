@@ -17,6 +17,7 @@ primary_des = "Any Aparat link such as Playlist Or Normal video"
 parser = argparse.ArgumentParser(prog="apd", description=primary_des)
 parser.add_argument("link", help="Page link")
 parser.add_argument("-q", "--quality", help=q_des, default="480")
+# Optional option's
 parser.add_argument("-p", "--playlist", help=play_list_des, action="store_true")
 parser.add_argument("-s", "--spider", help=spider_des, action="store_true")
 parser.add_argument("-l", "--just-list", help=just_list_des, action="store_true")
@@ -28,3 +29,17 @@ quality = args.quality
 playlist = args.playlist
 spider = args.spider    
 just_list = args.just_list
+
+videos = [] # Video's address will list in this variable
+
+if(link != None):
+    if(playlist == True):
+        pass
+    else:
+        videos = vf.main(link, quality)
+    if(spider == True):
+        pass
+    if(just_list == True):
+        pass
+else:
+    pass # print the usage
