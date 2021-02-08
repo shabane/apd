@@ -18,4 +18,10 @@
             fixed
         </comment>
     </note>
+    <note priority="veryhigh" time="1612818050" done="1612820291">
+        the video_finder shoud retern a name for each video link. may dictionary need
+        <comment>
+            video_finder return the video name
+        </comment>
+    </note>
 </todo>

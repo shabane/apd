@@ -30,7 +30,7 @@ playlist = args.playlist
 spider = args.spider    
 just_list = args.just_list
 
-videos = [] # Video's address will list in this variable
+videos = [] # Video's will list the video url and it's name on a tuple
 
 if(link != None):
     if(playlist == True):
@@ -44,4 +44,4 @@ if(link != None):
 else:
     print("Did you miss link ?")
 
-print(videos[0:])
+print(videos)
