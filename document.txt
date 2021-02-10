@@ -1,0 +1,58 @@
+[simple look]
+	aparat downloader is a program that make downloading video's and playlist easy from aparat.
+	apd is the main of the program which conrtrol all the module and maintain the cli interface.
+	all you need for download one video is thet paste video page link after the command apd. like:
+	apd https://aparat.com/some/videohash
+	or if you need to download whole video of a playlist put --playlist before or after the link that have 
+	a playlist.
+	if you use --list option, it will print the url/url's to stdout and then you can redirect them to a file
+	note that if you use --list, apd won't download any video.
+	and the last option is --quality this option get a number and try to find the video download url with that
+	quality.
+	note that if you don't specify quality, apd will try to find 480 quality.
+	all the option has a short way to use:
+	{
+		--quality	| -q
+		--playlist	| -p
+		--list		| -l
+	}
+
+[moduls]
+	main: apd
+		as i told the main control all module's, include: play_list_finder, video_finder and downloader.
+
+	video_finder: this module will find the the video with given quality of the url.
+
+	play_list_downloader.py: this module will return a list of all video page from the play list.
+
+	downloader.py: this module will download a list.
+
+[deep in all]
+	*affter this main will call as apd
+	apd:
+		in apd we have a list named videos this list hold all video's download url and their name's.
+		the video and it's corresponding name will be in a tuple like this: ("url", "name")
+		print the list will be like this: [("url", "name"),("url", "name"), ("url", "name")]
+		this list will give to downloader module if -l not specify.
+		if -l specify, from whole of list just the fist index of tuple will print,
+		the first index is url.
+	play_list_finder:
+		if -p specify, the url will gave to this module and this module will return a list of all 
+		video page link that it found, than apd will gave the url's line by line to video_finder module.
+	video_finder:
+		video_finder take two input. the link and quality. this module will get back two string.
+		the url and it's corresponding name. and apd will save them as a tuple in the videos list.
+		if the quality didn't find, video_finder will say that.
+	downloader:
+		this is the final module which can download the videos.
+		downloader get the videos list and try to download the list from zero index of tuple and
+		save the downloaded content.
+		the name of the video will save as the first index of tuple.
+
+[exit code]
+	0: every thing is great
+	10: error in the apd
+	20: error in video_finder
+	30: error in play_list_finder
+	40: error in downloader
+	other error: all other error come from http status

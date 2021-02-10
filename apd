@@ -37,20 +37,24 @@ if(link != None):
     if(playlist == True):
         plvideos = plf.main(link)
         try:
-            bar = tqdm.trange(len(plvideos))
             print("%s video found, extracting video url..." %len(plvideos))
+            bar = tqdm.trange(len(plvideos))
             for i in plvideos:
-                videos.append(vf.main(i, quality))
                 bar.update(1)
+                videos.append(vf.main(i, quality))
         except:
-            print("err")
-            sys.exit(1)
+            print("error in finding video page, may the playlist you entr is wrong")
+            sys.exit(10)
     else:
         videos.append(vf.main(link, quality))
     if(just_list == True):
         for i in videos:
             print(i[0])
     else:
-        pass # downloader shoud call here
+        try:
+            dl.main(videos)
+        except:
+            print("error in dowload video")
+            sys.exit(10)
 else:
     print("Did you miss the link ?")

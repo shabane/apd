@@ -1,0 +1,7 @@
+requests
+argparse
+tqdm
+bs4
+sys
+re
+

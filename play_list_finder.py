@@ -24,6 +24,7 @@ def main(link):
             return videos
         else:
             print("err: http status code:", req.status_code)
+            sys.exit(req.status_code)
     elif(link[0:23] == "https://www.aparat.com/"):
         link ="https://aparat.com/playlist/"+re.findall("\=(.*)", link)[0] # this regex return play list address
         req = requests.get(link)
@@ -37,3 +38,4 @@ def main(link):
             return videos
         else:
             print("err: http status code:", req.status_code)
+            sys.exit(req.status_code)
