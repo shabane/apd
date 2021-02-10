@@ -5,6 +5,8 @@ import downloader as dl
 import video_finder as vf
 import play_list_finder as plf
 import argparse
+import tqdm
+import sys
 
 # Description for each option and paramer
 play_list_des = "If video have play list, find and download all playlist. if play list url given, download all play list. -l will print all the links on stdout\n"
@@ -35,11 +37,14 @@ if(link != None):
     if(playlist == True):
         plvideos = plf.main(link)
         try:
-            print("%s video finded" %len(plvideos))
+            bar = tqdm.trange(len(plvideos))
+            print("%s video found, extracting video url..." %len(plvideos))
             for i in plvideos:
                 videos.append(vf.main(i, quality))
+                bar.update(1)
         except:
             print("err")
+            sys.exit(1)
     else:
         videos.append(vf.main(link, quality))
     if(just_list == True):
