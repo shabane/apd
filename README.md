@@ -38,6 +38,11 @@ all the option has a short way to use:
 2. than extract it with ```tar -xf apd.tar``` command
 3. enter ```chmod u+x ./install.sh```
 4. run ```./install.sh```
-5. yo made it, now you can run apd command.
+5. yo made it, now you can run ```apd``` command.
+6. ``` apd "aparat link" [option]
 
 # how to install on windows
+1. first download the windows version of apd from this link [apt.tar](https://gateway.pinata.cloud/ipfs/QmX3iLPWKWBC2o3xJBFqruoDdegdCbLRMdkXBtSao9WSRP)
+2. extract the file
+3. open CMD and go to the apd dircectory
+4. enter ```apd.py "apart link" [option]```
