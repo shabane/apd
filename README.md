@@ -39,7 +39,7 @@ all the option has a short way to use:
 3. enter ```chmod u+x ./install.sh```
 4. run ```./install.sh```
 5. yo made it, now you can run ```apd``` command.
-6. ``` apd "aparat link" [option]
+6. ```apd "aparat link" [option]```
 
 # how to install on windows
 1. first download the windows version of apd from this link [apt.tar](https://gateway.pinata.cloud/ipfs/QmX3iLPWKWBC2o3xJBFqruoDdegdCbLRMdkXBtSao9WSRP)
