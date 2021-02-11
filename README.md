@@ -22,12 +22,13 @@ Or
 and the last option is --quality this option get a number and try to find the video download url with that quality.
 ```apd https://aparat.com/some/videohash --playlist --list --quality 1080```
 
-all the option has a short way to use:
-{
-	  --quality	  | -q
-		--playlist	| -p
-		--list		  | -l
-	}
+## all the option has a short way to use:
+
+	> quality	| -q
+		
+	> playlis	| -p
+		
+	> list		| -l
   
 >note that if you use --list, apd won't download any video.
 
