@@ -24,11 +24,11 @@ and the last option is --quality this option get a number and try to find the vi
 
 ## all the option has a short way to use:
 
-	> quality	| -q
+> quality	| -q
 		
-	> playlis	| -p
+> playlis	| -p
 		
-	> list		| -l
+> list		| -l
   
 >note that if you use --list, apd won't download any video.
 
