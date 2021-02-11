@@ -32,3 +32,12 @@ all the option has a short way to use:
 >note that if you use --list, apd won't download any video.
 
 >note that if you don't specify quality, apd will try to find 480 quality.
+
+# how to install on linux
+1. first download this file [apd.tar](https://gateway.pinata.cloud/ipfs/QmWV2jprP66Y1JbLtXLXWq5LYeZa6VQZn3ayTNhaCqmQnv)
+2. than extract it with ```tar -xf apd.tar``` command
+3. enter ```chmod u+x ./install.sh```
+4. run ```./install.sh```
+5. yo made it, now you can run apd command.
+
+# how to install on windows
