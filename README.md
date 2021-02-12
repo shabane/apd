@@ -47,3 +47,13 @@ and the last option is --quality this option get a number and try to find the vi
 2. extract the file
 3. open CMD and go to the apd dircectory
 4. enter ```apd.py "apart link" [option]```
+
+
+### exit code is:
+	0: every thing is great
+	2: missing some option
+	10: error in the apd
+	20: error in video_finder
+	30: error in play_list_finder
+	40: error in downloader
+	other error: all other error come from http status
