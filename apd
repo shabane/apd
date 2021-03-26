@@ -14,45 +14,52 @@ q_des = "144, 360, 480, 720, 1080"
 spider_des = "If --spider or -s specify, it will crawl the page given and download all the play list. -l will print all the links on stdout"
 just_list_des = "Just print the video's link in stdout"
 primary_des = "Any Aparat link such as Playlist Or Normal video"
-
+start_from_des = "proccess from which video of the playlist, default is 1"
+end_in_des = "end in which video of playlist, default is the last video"
 # Craate Commad line interface
 parser = argparse.ArgumentParser(prog="apd", description=primary_des)
 parser.add_argument("link", help="Page link")
 parser.add_argument("-q", "--quality", help=q_des, default="480", type=int)
-# Optional option's
+    # Optional option's
 parser.add_argument("-p", "--playlist", help=play_list_des, action="store_true")
 parser.add_argument("-l", "--just-list", help=just_list_des, action="store_true")
-
+    # Additional option's
+parser.add_argument("--start", help=start_from_des, type=int, default=1)
+parser.add_argument("--end", help=end_in_des, type=int, default=0)
 # Set the variable
 args = parser.parse_args()
 link = args.link
 quality = args.quality
 playlist = args.playlist
 just_list = args.just_list
-
+start_from = args.start - 1
+end_in = args.end
 videos = [] # list the video url and it's name on a tuple. like this: [("video", "url"), ("video", "url"), etc]
 plvideos = [] # list all the page of play list
 
 if(link != None):
     if(playlist == True):
-        plvideos = plf.main(link)
+        plvideos = plf.main(link) # plf will return a list
         try:
             print("%s video found, extracting video url..." %len(plvideos))
             bar = tqdm.trange(len(plvideos))
             for i in plvideos:
                 bar.update(1)
                 videos.append(vf.main(i, quality))
+            if(end_in == 0):
+                end_in = len(videos)
         except:
             print("error in finding video page, may the playlist you entr is wrong")
             sys.exit(10)
     else:
         videos.append(vf.main(link, quality))
     if(just_list == True):
-        for i in videos:
+        tmp = videos[start_from:end_in]
+        for i in tmp:
             print(i[0])
     else:
         try:
-            dl.main(videos)
+            dl.main(videos[start_from:end_in])
         except:
             print("error in dowload video")
             sys.exit(10)
