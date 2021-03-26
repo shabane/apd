@@ -54,10 +54,9 @@ and --end indicate that which video is the last video that should be process.
 # how to install on linux
 1. first download this file [apd](https://drive.google.com/drive/folders/1sQB0Akgg5ShKrI7GfVax_GniHoNQEhmm?usp=sharing)
 2. than extract it with ```unzip apd.zip``` command
-3. enter ```chmod u+x ./install.sh```
-4. run ```./install.sh```
-5. yo made it, now you can run ```apd``` command.
-6. ```apd "aparat link" [option]```
+3. enter ```bash install.sh```
+4. yo made it, now you can run ```apd``` command.
+5. ```apd "aparat link" [option]```
 
 # how to install on windows
 1. first download the windows version of apd from this link [apt](https://drive.google.com/drive/folders/1zktNueaedc1j5FJBT1Saa-uFSJbSPmFj?usp=sharing)
