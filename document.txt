@@ -7,14 +7,17 @@
 	a playlist.
 	if you use --list option, it will print the url/url's to stdout and then you can redirect them to a file
 	note that if you use --list, apd won't download any video.
-	and the last option is --quality this option get a number and try to find the video download url with that
-	quality.
+	 --quality option get a number and try to find the video download url with that quality.
 	note that if you don't specify quality, apd will try to find 480 quality.
+	 --start will proccess the playlist from where you specify, the default is 1.
+	 --end will end up the proccess from where you specify, the default is the end of playlist.
 	all the option has a short way to use:
 	{
 		--quality	| -q
 		--playlist	| -p
 		--list		| -l
+		--start		|
+		--end		|
 	}
 
 [moduls]
@@ -23,18 +26,18 @@
 
 	video_finder: this module will find the the video with given quality of the url.
 
-	play_list_downloader.py: this module will return a list of all video page from the play list.
+	play_list_finder.py: this module will return a list of all video page from the play list.
 
-	downloader.py: this module will download a list.
+	downloader.py: this module will download video/video's.
 
 [deep in all]
 	*affter this main will call as apd
 	apd:
-		in apd we have a list named videos this list hold all video's download url and their name's.
+		in apd we have a list named videos this list hold all video's download url and their name's in a tuple().
 		the video and it's corresponding name will be in a tuple like this: ("url", "name")
-		print the list will be like this: [("url", "name"),("url", "name"), ("url", "name")]
+		if you print the videos,it will be like this: [("url", "name"),("url", "name"), ("url", "name")]
 		this list will give to downloader module if -l not specify.
-		if -l specify, from whole of list just the fist index of tuple will print,
+		if -l specify, from all the list just the fist index of tuple will print,
 		the first index is url.
 	play_list_finder:
 		if -p specify, the url will gave to this module and this module will return a list of all 
