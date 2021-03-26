@@ -51,6 +51,14 @@
 		downloader get the videos list and try to download the list from zero index of tuple and
 		save the downloaded content.
 		the name of the video will save as the first index of tuple.
+[git]
+	this program in git initialized, and we have three branch
+		Master: the sorce, readme and document is in this branch.
+		Linux: this branch has a install.sh that install the library and apd for current user.
+			and there is no [readme, documnt] in it
+		Windows: in this branch we don't have any additional file and there is no [readme, documnt] in it.
+			but the name of apd is apd.py
+
 
 [exit code]
 	0: every thing is great
