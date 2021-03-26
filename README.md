@@ -29,14 +29,16 @@ the --start specify that from which vedio should start the process.
 and --end indicate that which video is the last video that should be process.
 ``` apd https://aparat.com/some/videohash --playlist --start 3 --end 13```
 
-## all the option has a short way to use:
+## some of the option has a short way to use:
 
 > quality	| -q
 		
 > playlis	| -p
 		
 > list		| -l
-  
+
+
+
 >note that if you use --list, apd won't download any video.
 
 >note that if you don't specify quality, apd will try to find 480 quality.
