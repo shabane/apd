@@ -19,20 +19,37 @@ Or
 
 
 
-and the last option is --quality this option get a number and try to find the video download url with that quality.
+for specify quality, --quality option get a number and try to find the video download url with that quality.
 ```apd https://aparat.com/some/videohash --playlist --list --quality 1080```
 
-## all the option has a short way to use:
+
+
+if you need to download a specify scop of a playlist you should use --start and/or --end.
+the --start specify that from which vedio should start the process.
+and --end indicate that which video is the last video that should be process.
+``` apd https://aparat.com/some/videohash --playlist --start 3 --end 13```
+
+## some of the option has a short way to use:
 
 > quality	| -q
 		
 > playlis	| -p
 		
 > list		| -l
-  
+
+
+
 >note that if you use --list, apd won't download any video.
 
 >note that if you don't specify quality, apd will try to find 480 quality.
+
+>note: you can use --start or --end singly, like:
+``` apd https://aparat.com/some/videohash --playlist --start 5```
+
+>note the default ending is the last video of playlist
+
+>note: default begining is the first video of playlist
+
 
 # how to install on linux
 1. first download this file [apd.tar](https://gateway.pinata.cloud/ipfs/QmWV2jprP66Y1JbLtXLXWq5LYeZa6VQZn3ayTNhaCqmQnv)
