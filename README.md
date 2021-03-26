@@ -53,7 +53,7 @@ and --end indicate that which video is the last video that should be process.
 
 # how to install on linux
 1. first download this file [apd](https://drive.google.com/drive/folders/1sQB0Akgg5ShKrI7GfVax_GniHoNQEhmm?usp=sharing)
-2. than extract it with ```tar -xf apd.tar``` command
+2. than extract it with ```unzip apd.zip``` command
 3. enter ```chmod u+x ./install.sh```
 4. run ```./install.sh```
 5. yo made it, now you can run ```apd``` command.
@@ -61,7 +61,7 @@ and --end indicate that which video is the last video that should be process.
 
 # how to install on windows
 1. first download the windows version of apd from this link [apt](https://drive.google.com/drive/folders/1zktNueaedc1j5FJBT1Saa-uFSJbSPmFj?usp=sharing)
-2. extract the file
+2. extract zip file
 3. open CMD and go to the apd dircectory
 4. enter ```apd.py "apart link" [option]```
 
