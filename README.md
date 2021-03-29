@@ -2,12 +2,11 @@
 ### aparat downloader is a program that make downloading video's and playlist easy from aparat.
 apd is the main of the program which conrtrol all the module and maintain the cli interface.
   
-all you need for download one video is thet paste video page link after the command apd. like:
+all you need for download one video is to paste the video page link after the command apd. like:
 ```apd https://aparat.com/some/videohash```
 ![Download One Vdeo](/image/download_one_video.gif)
 
-or if you need to download whole video of a playlist put --playlist before or after the link that have 
-a playlist. like this:
+or if you need to download the whole videos of a playlist, put --playlist before or after the link of the playlist. Like this:
 ``` apd https://aparat.com/some/videohash --playlist ```
 ![Download all playlist](/image/download_all_playlist.gif)
 
@@ -19,13 +18,13 @@ Or
 
 
 
-for specify quality, --quality option get a number and try to find the video download url with that quality.
+To specify the quality, use --quality option and set your required quality. Like This:
 ```apd https://aparat.com/some/videohash --playlist --list --quality 1080```
 
 
 
 if you need to download a specify scop of a playlist you should use --start and/or --end.
-the --start specify that from which vedio should start the process.
+the --start specify that from which video should start the process.
 and --end indicate that which video is the last video that should be process.
 ``` apd https://aparat.com/some/videohash --playlist --start 3 --end 13```
 
@@ -55,7 +54,7 @@ and --end indicate that which video is the last video that should be process.
 1. first download this file [apd](https://drive.google.com/drive/folders/1sQB0Akgg5ShKrI7GfVax_GniHoNQEhmm?usp=sharing)
 2. than extract it with ```unzip apd.zip``` command
 3. enter ```bash install.sh```
-4. yo made it, now you can run ```apd``` command.
+4. you made it, now you can run ```apd``` command.
 5. ```apd "aparat link" [option]```
 
 # how to install on windows
