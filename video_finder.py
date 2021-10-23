@@ -4,12 +4,20 @@ from bs4 import BeautifulSoup as bs
 import requests
 import sys
 import re
+import json
 
+headers = {}
+with open("headers", "r") as fli:
+        fli = json.load(fli)
+        if type(fli) != dict:
+            print("err: the header file should be a json file", file=sys.stderr)
+        elif type(fli) == dict:
+            headers = fli
 
 def main(link, quality):
     found_or_not = str()
     quality = ".*"+str(quality)+".*"    # This regex find the specify quality in the list of all quality
-    req = requests.get(link)
+    req = requests.get(link, headers=headers)
     if(req.status_code == 200):
         result = req.content
         soup = bs(result, "html.parser")
@@ -23,8 +31,8 @@ def main(link, quality):
                 found_or_not = i
                 return i, name
         if(len(found_or_not) <= 0):
-            print("Video with given quality not found")
-            sys.exit(20)
+            print(f"Video with given quality {quality} not found. link: {link}")
     else:
-        print("err: http status code is: "+req.status_code)
+        print(link)
+        print("err in video finder: http status code is: "+str(req.status_code))
         sys.exit(req.status_code)

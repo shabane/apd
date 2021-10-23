@@ -54,6 +54,8 @@ if(link != None):
     else:
         videos.append(vf.main(link, quality))
     if(just_list == True):
+        if(not end_in):
+            end_in = 1
         tmp = videos[start_from:end_in]
         for i in tmp:
             print(i[0])
