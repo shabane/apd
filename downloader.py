@@ -4,7 +4,7 @@ import sys
 import json
 
 headers = {}
-with open("headers", "r") as fli:
+with open(f"{sys.path[0]}/headers", "r") as fli:
         fli = json.load(fli)
         if type(fli) != dict:
             print("err: the header file should be a json file", file=sys.stderr)
