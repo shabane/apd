@@ -1,6 +1,5 @@
 requests
 argparse
-tqdm
 bs4
 re
 
