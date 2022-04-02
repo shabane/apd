@@ -5,7 +5,6 @@ import downloader as dl
 import video_finder as vf
 import play_list_finder as plf
 import argparse
-import tqdm
 import sys
 
 # Description for each option and paramer
