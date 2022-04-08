@@ -1,4 +1,4 @@
-# apd
+# apd(this program doesnt work any more due to aparat design changes)
 ### aparat downloader is a program that make downloading video's and playlist easy from aparat.
 apd is the main of the program which conrtrol all the module and maintain the cli interface.
   
